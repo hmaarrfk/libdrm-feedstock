@@ -13,9 +13,9 @@ source:
 
 build:
   skip: True  # [not linux]
-  number: 0
-  # For some reason, compiling with meson, the recommended way, doesn't
-  # correctly allow libva to find libdrm
+  number: 1
+  run_exports:
+    - {{ pin_subpackage('libdrm', max_pin='x.x') }}
   script:
     - ./configure --prefix={{ PREFIX }}
     - make -j$(nproc) install
@@ -25,9 +25,8 @@ requirements:
     - {{ compiler('c') }}
     - pkg-config
   host:
-    - libpciaccess
-  run:
-    - libpciaccess
+    # build 0 of libpciaccess 0.14 didn't have the run_exports
+    - libpciaccess >=0.14=*_1
 
 test:
   commands:
