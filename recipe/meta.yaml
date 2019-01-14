@@ -13,7 +13,7 @@ source:
 
 build:
   skip: True  # [not linux]
-  number: 1001
+  number: 1002
   run_exports:
     - {{ pin_subpackage('libdrm', max_pin='x.x') }}
   script:
@@ -26,7 +26,7 @@ requirements:
     - pkg-config
   host:
     # build 0 of libpciaccess 0.14 didn't have the run_exports
-    - libpciaccess >=0.14=*_1
+    - libpciaccess >=0.14
 
 test:
   commands:
