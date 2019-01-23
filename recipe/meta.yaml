@@ -1,5 +1,5 @@
 {% set name = "libdrm" %}
-{% set version = "2.4.96" %}
+{% set version = "2.4.97" %}
 
 # http://www.linuxfromscratch.org/blfs/view/8.2/x/libdrm.html
 
@@ -9,11 +9,11 @@ package:
 
 source:
   url: https://dri.freedesktop.org/libdrm/libdrm-{{ version }}.tar.gz
-  sha256: d2bba5ca2ddfbdbc0f9f981835d31e1af373b9c1851014826c9698f80373c1bb
+  sha256: 8c6f4d0934f5e005cc61bc05a917463b0c867403de176499256965f6797092f1
 
 build:
   skip: True  # [not linux]
-  number: 1002
+  number: 0
   run_exports:
     - {{ pin_subpackage('libdrm', max_pin='x.x') }}
   script:
