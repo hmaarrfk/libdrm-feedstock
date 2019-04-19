@@ -1,5 +1,5 @@
 {% set name = "libdrm" %}
-{% set version = "2.4.97" %}
+{% set version = "2.4.98" %}
 
 # http://www.linuxfromscratch.org/blfs/view/8.2/x/libdrm.html
 
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://dri.freedesktop.org/libdrm/libdrm-{{ version }}.tar.gz
-  sha256: 8c6f4d0934f5e005cc61bc05a917463b0c867403de176499256965f6797092f1
+  sha256: 39789e2c37e7300324777a5c0a4ea1846537822b15ea3e630b0a000d8243ee97
 
 build:
   skip: True  # [not linux]
