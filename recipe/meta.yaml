@@ -41,6 +41,7 @@ about:
   home: https://gitlab.freedesktop.org/mesa/drm
   license: MIT
   license_family: MIT
+  # License extracted from xf86drm.h
   license_file: LICENSE
   summary: 'userspace library for drm'
 
