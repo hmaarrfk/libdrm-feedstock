@@ -1,5 +1,5 @@
 {% set name = "libdrm" %}
-{% set version = "2.4.100" %}
+{% set version = "2.4.102" %}
 
 # http://www.linuxfromscratch.org/blfs/view/8.2/x/libdrm.html
 
@@ -8,22 +8,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://dri.freedesktop.org/libdrm/libdrm-{{ version }}.tar.gz
-  sha256: 6a5337c054c0c47bc16607a21efa2b622e08030be4101ef4a241c5eb05b6619b
+  url: https://github.com/freedesktop/mesa-drm/archive/libdrm-{{ version }}.tar.gz
+  sha256: 198e05f7758a77adcdbbddb11d354a9b564f3699ff137d12d324033943fae806
+  patches:
+    - link_rt.patch
 
 build:
-  skip: True  # [not linux]
+  skip: true  # [not linux]
   number: 0
   run_exports:
     - {{ pin_subpackage('libdrm', max_pin='x.x') }}
-  script:
-    - ./configure --prefix={{ PREFIX }}
-    - make -j$(nproc) install
 
 requirements:
   build:
     - {{ compiler('c') }}
-    - pkg-config
+    - meson
   host:
     # build 0 of libpciaccess 0.14 didn't have the run_exports
     - libpciaccess >=0.14
@@ -40,9 +39,10 @@ test:
 
 about:
   home: https://gitlab.freedesktop.org/mesa/drm
-  license: MIT?
+  license: MIT
   license_family: MIT
-  # license_file: COPYING
+  # License extracted from xf86drm.h
+  license_file: LICENSE
   summary: 'userspace library for drm'
 
   # The remaining entries in this section are optional, but recommended
