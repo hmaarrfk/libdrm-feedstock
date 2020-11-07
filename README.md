@@ -3,9 +3,9 @@ About libdrm
 
 Home: https://gitlab.freedesktop.org/mesa/drm
 
-Package license: MIT?
+Package license: MIT
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/libdrm-feedstock/blob/master/LICENSE.txt)
 
 Summary: userspace library for drm
 

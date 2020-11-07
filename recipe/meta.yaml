@@ -1,5 +1,5 @@
 {% set name = "libdrm" %}
-{% set version = "2.4.102" %}
+{% set version = "2.4.103" %}
 
 # http://www.linuxfromscratch.org/blfs/view/8.2/x/libdrm.html
 
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://github.com/freedesktop/mesa-drm/archive/libdrm-{{ version }}.tar.gz
-  sha256: 198e05f7758a77adcdbbddb11d354a9b564f3699ff137d12d324033943fae806
+  sha256: f1ff7535a49ef18cf18d4fbe8307259cd39856790418b0af69319aab79c71db8
   patches:
     - link_rt.patch
 
@@ -43,7 +43,7 @@ about:
   license_family: MIT
   # License extracted from xf86drm.h
   license_file: LICENSE
-  summary: 'userspace library for drm'
+  summary: userspace library for drm
 
   # The remaining entries in this section are optional, but recommended
   description: |
