@@ -10,8 +10,6 @@ package:
 source:
   url: https://github.com/freedesktop/mesa-drm/archive/libdrm-{{ version }}.tar.gz
   sha256: 694c50c199dcaafb77e055c77561d89c322ca9f0da716bc35e0675b155452531
-  patches:
-    - link_rt.patch
 
 build:
   skip: true  # [not linux]
