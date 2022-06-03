@@ -10,9 +10,9 @@ package:
 source:
   url: https://github.com/freedesktop/mesa-drm/archive/libdrm-{{ version }}.tar.gz
   sha256: 80f65b22610751cde71b55cf8218aac704b325b3feabfc8dab717fe999785b21
-  patches:
-    # https://gitlab.freedesktop.org/mesa/drm/-/issues/72
-    - link_rt.patch
+  # patches:
+  #   # https://gitlab.freedesktop.org/mesa/drm/-/issues/72
+  #   - link_rt.patch
 
 build:
   skip: true  # [not linux]
@@ -25,8 +25,7 @@ requirements:
     - {{ compiler('c') }}
     - meson
   host:
-    # build 0 of libpciaccess 0.14 didn't have the run_exports
-    - libpciaccess >=0.14
+    - libpciaccess
 
 test:
   commands:
