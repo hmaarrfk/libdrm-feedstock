@@ -1,5 +1,5 @@
 {% set name = "libdrm" %}
-{% set version = "2.4.112" %}
+{% set version = "2.4.113" %}
 
 # http://www.linuxfromscratch.org/blfs/view/8.2/x/libdrm.html
 
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://github.com/freedesktop/mesa-drm/archive/libdrm-{{ version }}.tar.gz
-  sha256: d869c59fb6d388a3eefac96861386b57c9f91002912dd021e2168a19543f746c
+  sha256: 7ea3db66bac5c83f7119e27a8d37af3b1724833555f43e7016307af81b53c69b
   patches:
     # https://gitlab.freedesktop.org/mesa/drm/-/issues/72
     - link_rt.patch
