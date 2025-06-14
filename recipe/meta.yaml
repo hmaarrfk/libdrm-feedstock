@@ -1,15 +1,14 @@
-{% set name = "libdrm" %}
-{% set version = "2.4.124" %}
+{% set version = "2.4.125" %}
 
 # http://www.linuxfromscratch.org/blfs/view/8.2/x/libdrm.html
 
 package:
-  name: {{ name|lower }}
+  name: libdrm
   version: {{ version }}
 
 source:
   url: https://gitlab.freedesktop.org/mesa/drm/-/archive/libdrm-{{ version }}/drm-libdrm-{{ version }}.tar.gz
-  sha256: 49c077f3938147e7c321fe89255eb189c1be68f6ed0aa36e29d38e3db0e84e08
+  sha256: 543544aeadf0c8bea920d00f75e5dc2ff2ac3702e034651a11db40d3ec38becf
   patches:
     # https://gitlab.freedesktop.org/mesa/drm/-/issues/72
     - link_rt.patch
@@ -23,7 +22,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
-    - {{ stdlib("c") }}
+    - {{ stdlib('c') }}
     - meson
   host:
     - libpciaccess
